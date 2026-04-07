@@ -63,8 +63,7 @@ Storage --> Backend
 Admin --> Backend
 Admin --> DB
 Admin --> Storage
-
-
+---
 
 
 ## Architecture Overview
@@ -103,27 +102,3 @@ This project is a full-stack WeChat Mini Program system, consisting of:
 - Used for:
   - Managing users / products / banners
   - Viewing statistics (charts / revenue / orders)
-
----
-
-# 🔥 三、如果你想更“高级一点”（面试级）
-
-我再给你一个**更偏工程能力展示的版本**👇
-
-```mermaid
-flowchart LR
-
-User[User<br/>Mini Program] --> FE[Frontend]
-
-FE -->|API Request| API[Django API Layer]
-
-API --> Auth[Auth System<br/>Token / Password Hash]
-API --> Order[Order System<br/>Freeze / Confirm]
-API --> Payment[Balance System]
-API --> Banner[Banner Service]
-
-API --> DB[(MySQL)]
-API --> Storage[(Media Storage)]
-
-Admin[Admin Dashboard] --> API
-Admin --> DB
