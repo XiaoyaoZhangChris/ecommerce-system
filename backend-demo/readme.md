@@ -14,7 +14,7 @@ stateDiagram-v2
         refund_applying --> refund_approved: Admin approves refund
     }
 
-    pending_pay --> paid_pending: Confirm order\n(refund_status = none/rejected)
+    pending_pay --> paid_pending: Confirm order(refund_status = none and status = pending_pay)
     pending_pay --> cancelled: Refund approved
 
     paid_pending --> [*]
