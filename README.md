@@ -24,3 +24,42 @@ It allows users to browse products, place orders, and interact with the platform
 This repository contains a simplified version of the project for demonstration purposes.  
 Some business logic and sensitive configurations have been removed.
 
+
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+
+%% 用户端
+User[👤 User<br/>WeChat Mini Program]
+
+%% 前端
+Frontend[📱 Frontend<br/>WeChat Mini Program<br/>WXML + JS + WXSS]
+
+%% 后端
+Backend[🧠 Backend API<br/>Django]
+
+%% 数据库
+DB[(🗄️ Database<br/>MySQL)]
+
+%% 存储
+Storage[(📂 Media Storage<br/>Images / Avatars / Banners)]
+
+%% 管理后台
+Admin[⚙️ Admin Panel<br/>Django Admin + Dashboard]
+
+%% 关系
+User --> Frontend
+
+Frontend -->|HTTP Request| Backend
+Backend -->|JSON Response| Frontend
+
+Backend --> DB
+DB --> Backend
+
+Backend --> Storage
+Storage --> Backend
+
+Admin --> Backend
+Admin --> DB
+Admin --> Storage
