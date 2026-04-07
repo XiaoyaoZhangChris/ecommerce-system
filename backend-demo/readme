@@ -1,0 +1,23 @@
+```markdown
+## 📦 Order State Flow
+
+```mermaid
+stateDiagram-v2
+    [*] --> unpaid: Create unpaid order
+
+    unpaid --> pending_pay: Balance payment success
+    unpaid --> cancelled: User deletes order / timeout
+
+    state pending_pay {
+        [*] --> normal
+        normal --> refund_applying: Apply refund
+        refund_applying --> normal: Revoke refund / admin rejects refund
+        refund_applying --> refund_approved: Admin approves refund
+    }
+
+    pending_pay --> paid_pending: Confirm order\n(refund_status = none/rejected)
+    pending_pay --> cancelled: Refund approved
+
+    paid_pending --> [*]
+    cancelled --> [*]
+```
