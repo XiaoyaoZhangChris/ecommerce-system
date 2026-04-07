@@ -19,9 +19,6 @@ stateDiagram-v2
 
     paid_pending --> [*]
     cancelled --> [*]
-```
-
-
 
 ```markdown
 ### Order Status Design
