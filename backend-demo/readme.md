@@ -10,7 +10,7 @@ stateDiagram-v2
     state pending_pay {
         [*] --> normal
         normal --> refund_applying: Apply refund
-        refund_applying --> normal: Revoke refund / admin rejects refund
+        refund_applying --> normal: Revoke refund
         refund_applying --> refund_approved: Admin approves refund
     }
 
