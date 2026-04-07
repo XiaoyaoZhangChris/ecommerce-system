@@ -25,7 +25,7 @@ This repository contains a simplified version of the project for demonstration p
 Some business logic and sensitive configurations have been removed.
 
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 flowchart TD
@@ -34,19 +34,19 @@ flowchart TD
 User[👤 User<br/>WeChat Mini Program]
 
 %% 前端
-Frontend[📱 Frontend<br/>WeChat Mini Program<br/>WXML + JS + WXSS]
+Frontend[Frontend<br/>WeChat Mini Program<br/>WXML + JS + WXSS]
 
 %% 后端
-Backend[🧠 Backend API<br/>Django]
+Backend[Backend API<br/>Django]
 
 %% 数据库
-DB[(🗄️ Database<br/>MySQL)]
+DB[(Database<br/>MySQL)]
 
 %% 存储
-Storage[(📂 Media Storage<br/>Images / Avatars)]
+Storage[(Media Storage<br/>Images / Avatars)]
 
 %% 管理后台
-Admin[⚙️ Admin Panel<br/>Django Admin + Dashboard]
+Admin[Admin Panel<br/>Django Admin + Dashboard]
 
 %% 关系
 User --> Frontend
