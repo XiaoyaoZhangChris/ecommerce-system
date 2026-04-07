@@ -80,7 +80,7 @@ This project is a full-stack WeChat Mini Program system, consisting of:
   - User authentication (login/register/token)
   - Order system (create / confirm / refund)
   - Payment logic (balance / freeze)
-  - Banner & product data
+  - product data
 
 ### Database
 - MySQL
@@ -89,16 +89,33 @@ This project is a full-stack WeChat Mini Program system, consisting of:
   - Orders
   - Products
   - Balance logs
-  - Banner configs
 
 ###  Media Storage
 - Stores:
   - User avatars
   - Product images
-  - Banner posters
 
 ### Admin Panel
 - Django Admin + custom dashboard
 - Used for:
-  - Managing users / products / banners
+  - Managing users / products
   - Viewing statistics (charts / revenue / orders)
+
+```mermaid
+flowchart LR
+
+User[User<br/>Mini Program] --> FE[Frontend]
+
+FE -->|API Request| API[Django API Layer]
+
+API --> Auth[Auth System<br/>Token / Password Hash]
+API --> Order[Order System<br/>Freeze / Confirm]
+API --> Payment[Balance System]
+API --> Banner[Banner Service]
+
+API --> DB[(MySQL)]
+API --> Storage[(Media Storage)]
+
+Admin[Admin Dashboard] --> API
+Admin --> DB
+```
