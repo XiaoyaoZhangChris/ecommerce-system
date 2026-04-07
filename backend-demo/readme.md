@@ -20,3 +20,24 @@ stateDiagram-v2
     paid_pending --> [*]
     cancelled --> [*]
 ```
+
+
+
+```markdown
+### Order Status Design
+
+The order system uses a controlled state transition model:
+
+- `unpaid` → created but not paid
+- `pending_pay` → paid / frozen, waiting for confirmation
+- `paid_pending` → completed order
+- `cancelled` → closed or refunded
+
+Refund flow is handled as a sub-state under `pending_pay`:
+- `none`
+- `applying`
+- `approved`
+- `rejected`
+
+This design prevents invalid transitions and improves payment/order safety
+```
