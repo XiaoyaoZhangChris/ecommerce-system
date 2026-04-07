@@ -6,9 +6,11 @@ It allows users to browse products, place orders, and interact with the platform
 
 ## Features
 - Product browsing
-- Order placement system
-- Admin dashboard for product management
-- Sales analytics and visualization
+- Secure authentication (hashed password + token system)
+- Balance system with freeze mechanism
+- Full order lifecycle (unpaid → pending → completed or refund)
+- Risk control (login limit / IP restriction)
+- Admin dashboard with data visualization (ECharts)
 
 ## Tech Stack
 - Backend: Django
@@ -101,21 +103,4 @@ This project is a full-stack WeChat Mini Program system, consisting of:
   - Managing users / products
   - Viewing statistics (charts / revenue / orders)
 
-```mermaid
-flowchart LR
 
-User[User<br/>Mini Program] --> FE[Frontend]
-
-FE -->|API Request| API[Django API Layer]
-
-API --> Auth[Auth System<br/>Token / Password Hash]
-API --> Order[Order System<br/>Freeze / Confirm]
-API --> Payment[Balance System]
-API --> Banner[Banner Service]
-
-API --> DB[(MySQL)]
-API --> Storage[(Media Storage)]
-
-Admin[Admin Dashboard] --> API
-Admin --> DB
-```
