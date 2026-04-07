@@ -43,7 +43,7 @@ Backend[🧠 Backend API<br/>Django]
 DB[(🗄️ Database<br/>MySQL)]
 
 %% 存储
-Storage[(📂 Media Storage<br/>Images / Avatars / Banners)]
+Storage[(📂 Media Storage<br/>Images / Avatars)]
 
 %% 管理后台
 Admin[⚙️ Admin Panel<br/>Django Admin + Dashboard]
